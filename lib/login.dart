@@ -1,3 +1,4 @@
+import 'package:first_application_flutter/home.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -28,6 +29,9 @@ class LoginState extends StatefulWidget{
 
 class LoginMain extends State<LoginState>{
 
+  GlobalKey<FormState> formKey = GlobalKey();
+  late String sEmail,sPassword;
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -49,9 +53,13 @@ class LoginMain extends State<LoginState>{
                 width: 100.0,
                 height: 100.0,
                 ),
-                Padding(
+                Form(
+                  key: formKey,
+                  child: Column(
+                  children: [
+                    Padding(
                   padding: const EdgeInsets.fromLTRB(30.0,50.0,30.0,0),
-                  child: TextField(
+                  child: TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -60,11 +68,22 @@ class LoginMain extends State<LoginState>{
                       hintText: "Enter Email Id:",
                       labelText: "Email Id",
                     ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Email Id required";
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                    onSaved: (value){
+                        sEmail = value!;
+                    },
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(30.0,20.0,30.0,0),
-                  child: TextField(
+                  child: TextFormField(
                     obscureText: true,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
@@ -74,6 +93,17 @@ class LoginMain extends State<LoginState>{
                       hintText: "Enter Password:",
                       labelText: "Password",
                     ),
+                    validator: (value){
+                      if(value!.isEmpty){
+                        return "Password required";
+                      }
+                      else{
+                        return null;
+                      }
+                    },
+                    onSaved: (value){
+                      sPassword = value!;
+                    },
                   ),
                 ),
                 Padding(
@@ -84,11 +114,20 @@ class LoginMain extends State<LoginState>{
                     height: 40.0,
                     child: TextButton(
                       onPressed: (){
-                        print("Login Succesfull");
-                        Fluttertoast.showToast(
-                          msg:"Login Successfull",
-                          toastLength: Toast.LENGTH_SHORT,
-                        );
+                        if(formKey.currentState!.validate()){
+                          formKey.currentState!.save();
+                            print("Login Succesfull .\nEmail : $sEmail, Password: $sPassword");
+                            Fluttertoast.showToast(
+                            msg:"Login Successfull",
+                            gravity: ToastGravity.BOTTOM,
+                            toastLength: Toast.LENGTH_SHORT
+                          );
+                          Navigator.push(
+                            context, MaterialPageRoute(
+                              builder: (_) => HomeState(sEmail,sPassword)
+                            )
+                          );
+                        }
                       },
                        child: Text(
                         "Login",
@@ -102,11 +141,13 @@ class LoginMain extends State<LoginState>{
                        ),
                   ),
                 ),
+                ],
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
-
   }
 }
