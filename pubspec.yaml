@@ -60,6 +60,9 @@ flutter:
 
   assets:
       - asset/icons/application.png
+      - asset/icons/gold.png
+      - asset/icons/silver.png
+      - asset/icons/bronze.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

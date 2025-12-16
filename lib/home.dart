@@ -287,8 +287,7 @@ class HomeMain extends State<HomeState>{
                     height: 40.0,
                     child: TextButton(
                       onPressed: (){
-                        
-                        if(technologyArray.length>0){
+                        if(technologyArray.isNotEmpty){
 
                           print(technologyArray);
                         }
@@ -322,7 +321,7 @@ class HomeMain extends State<HomeState>{
     );
 
   }
-  technologyMethod(isSelect,technology){
+  void technologyMethod(isSelect,technology){
 
     if(isSelect){
 
