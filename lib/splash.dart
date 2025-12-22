@@ -1,6 +1,10 @@
 import 'dart:async';
 
+import 'package:first_application_flutter/bottomNav.dart';
 import 'package:first_application_flutter/custom_list.dart';
+import 'package:first_application_flutter/login.dart';
+import 'package:first_application_flutter/navigationDemo.dart';
+import 'package:first_application_flutter/tabDemo.dart';
 import 'package:flutter/material.dart';
 
 
@@ -40,7 +44,7 @@ class SplashMain extends State<SplashState>{
       return new Timer(
         Duration(seconds: 3,),()
         {
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> CustomListState()),);
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> BottomState()),);
         }
       );
 
