@@ -1,14 +1,18 @@
 import 'dart:async';
 
+import 'package:first_application_flutter/jsonLogin.dart';
 import 'package:first_application_flutter/bottomNav.dart';
 import 'package:first_application_flutter/custom_list.dart';
 import 'package:first_application_flutter/login.dart';
 import 'package:first_application_flutter/navigationDemo.dart';
+import 'package:first_application_flutter/sqliteDemo.dart';
 import 'package:first_application_flutter/tabDemo.dart';
 import 'package:flutter/material.dart';
 
 
 class SplashDemo extends StatelessWidget{
+  const SplashDemo({super.key});
+
 
     @override
   Widget build(BuildContext context){
@@ -24,6 +28,8 @@ class SplashDemo extends StatelessWidget{
 }
 
 class SplashState extends StatefulWidget{
+  const SplashState({super.key});
+
 
   @override 
   SplashMain createState() => SplashMain();
@@ -41,10 +47,10 @@ class SplashMain extends State<SplashState>{
 
   Future<Timer> startTimerMethod() async{
 
-      return new Timer(
+      return Timer(
         Duration(seconds: 3,),()
         {
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> BottomState()),);
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> JsonLoginState()),);
         }
       );
 

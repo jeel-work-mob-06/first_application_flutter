@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class NavigationState extends StatefulWidget{
+  const NavigationState({super.key});
+
 
   @override
   NavigationMain createState() => NavigationMain();
@@ -24,7 +26,7 @@ class NavigationMain extends State<NavigationState>{
         backgroundColor: const Color.fromARGB(255, 76, 175, 163),
       ),
       drawer: Drawer(
-          child: new ListView(
+          child: ListView(
             children: [
               UserAccountsDrawerHeader(
                 accountName: Text("Username"),
@@ -60,7 +62,7 @@ class NavigationMain extends State<NavigationState>{
 
   }
   
-  showMessage(message) {
+  void showMessage(message) {
       Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_SHORT,

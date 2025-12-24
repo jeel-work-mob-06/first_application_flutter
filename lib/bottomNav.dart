@@ -4,6 +4,8 @@ import 'package:first_application_flutter/status.dart';
 import 'package:flutter/material.dart';
 
 class BottomState extends StatefulWidget{
+  const BottomState({super.key});
+
 
   @override
   BottomMain createState() => BottomMain();

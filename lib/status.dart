@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StatusState extends StatefulWidget {
+  const StatusState({super.key});
+
 
   @override
   StatusMain createState() => StatusMain();

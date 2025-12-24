@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomListState extends StatefulWidget {
+  const CustomListState({super.key});
+
 
   @override
   CustomListMain createState() => CustomListMain();
@@ -30,6 +32,8 @@ class CustomListDesign extends StatelessWidget{
    List<String> titleArray = ["Gold","Silver","Bronze"];
   List<String> imageArray = ["gold.png","silver.png","bronze.png"];
   String imagePath = "asset/icons/";
+
+  CustomListDesign({super.key});
 
 
   @override

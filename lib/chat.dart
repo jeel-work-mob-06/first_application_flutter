@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ChatState extends StatefulWidget {
+  const ChatState({super.key});
+
 
   @override
   ChatMain createState() => ChatMain();

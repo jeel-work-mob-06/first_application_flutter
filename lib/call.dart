@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CallState extends StatefulWidget {
+  const CallState({super.key});
+
 
   @override
   CallMain createState() => CallMain();

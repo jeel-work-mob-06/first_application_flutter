@@ -4,6 +4,8 @@ import 'package:first_application_flutter/status.dart';
 import 'package:flutter/material.dart';
 
 class TabState extends StatefulWidget{
+  const TabState({super.key});
+
 
   @override
   TabMain createState() => TabMain();
@@ -39,7 +41,7 @@ class TabMain extends State<TabState> with SingleTickerProviderStateMixin {
     );
   }
 
-  getTabView(){
+  TabBar getTabView(){
     return TabBar(tabs:[
       Tab(text: "Chat",),
       Tab(text: "Status",),
@@ -49,10 +51,10 @@ class TabMain extends State<TabState> with SingleTickerProviderStateMixin {
     );
   }
 
-  getTabPage(){
+  TabBarView getTabPage(){
     return TabBarView(
-      children: tabArray,
       controller: tabController,
+      children: tabArray,
     );
   }
 }
