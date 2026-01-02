@@ -162,7 +162,7 @@ class JsonLoginMain extends State<JsonLoginState>{
     );
   }
 
-  loginUser(String email, String password) async {
+  Future<void> loginUser(String email, String password) async {
 
   var map = {
     "email": email,

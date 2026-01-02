@@ -33,7 +33,7 @@ class JsonProfileMain extends State<JsonProfileState>{
     setData();
   }
 
-  setData() async{
+  Future<void> setData() async{
     var sp = await SharedPreferences.getInstance();
     setState(() {
       sId = sp.getString(Constantsp.USER_ID) ?? "";
@@ -359,7 +359,7 @@ class JsonProfileMain extends State<JsonProfileState>{
     );
   }
 
-  showAlertDialog(BuildContext context){
+  void showAlertDialog(BuildContext context){
 
     Widget cancelButton = TextButton(
       onPressed: (){
@@ -392,7 +392,7 @@ class JsonProfileMain extends State<JsonProfileState>{
 
   }
 
-  openGallery() async{
+  Future<void> openGallery() async{
     XFile? pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     if(pickedFile != null){
       setState(() {
@@ -401,7 +401,7 @@ class JsonProfileMain extends State<JsonProfileState>{
     }
   }
 
-  openCamera() async{
+  Future<void> openCamera() async{
     XFile? pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
     if(pickedFile != null){
       setState(() {
@@ -420,7 +420,7 @@ class JsonProfileMain extends State<JsonProfileState>{
     );
   }
 
-  updateData(File? imageFile, String id,String firstName,String lastName, String email, String contact, String password, String gender) async {
+  Future<void> updateData(File? imageFile, String id,String firstName,String lastName, String email, String contact, String password, String gender) async {
     var sp = await SharedPreferences.getInstance();
     var map = {
       "firstname" : firstName,

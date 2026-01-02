@@ -1,11 +1,6 @@
 import 'dart:async';
 
 import 'package:first_application_flutter/jsonLogin.dart';
-import 'package:first_application_flutter/bottomNav.dart';
-import 'package:first_application_flutter/custom_list.dart';
-import 'package:first_application_flutter/login.dart';
-import 'package:first_application_flutter/navigationDemo.dart';
-import 'package:first_application_flutter/sqliteDemo.dart';
 import 'package:first_application_flutter/tabDemo.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +45,7 @@ class SplashMain extends State<SplashState>{
       return Timer(
         Duration(seconds: 3,),()
         {
-              Navigator.push(context, MaterialPageRoute(builder: (_)=> JsonLoginState()),);
+              Navigator.push(context, MaterialPageRoute(builder: (_)=> TabState()),);
         }
       );
 

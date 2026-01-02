@@ -1,6 +1,6 @@
 class Constantsp {
 
-  static final  String BASE_URL = "http://192.168.1.109/Test_api/";
+  static final  String BASE_URL = "http://192.168.31.118/Test_api/";
   static final String SIGNUP_URL = "${BASE_URL}signup.php";
   static final String Login_URL = "${BASE_URL}login.php";
   static final String UPDATE_URL = "${BASE_URL}updateProfile.php";

@@ -306,7 +306,7 @@ class JsonSignupMain extends State<JsonSignupState>{
 
   }
   
-  insertData(String firstname, String lastname, String email,
+  Future<void> insertData(String firstname, String lastname, String email,
     String contact, String password, String gender) async {
 
   var map = {
